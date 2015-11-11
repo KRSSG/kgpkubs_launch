@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/zsh
 # Start SSL functionality in screen sessions
 # to kill all sessions: killall -15 screen
 
@@ -21,5 +21,5 @@ launcher    "core"         "roscore"
 pr_launcher "vision"    "vision.launch"
 pr_launcher "belief_state"      "belief_state.launch"
 pr_launcher "grsim_comm"    "grsim_comm.launch"
-pr_launcher "robot"         "robot.launch"
-# pr_launcher "rj_robot"         "rj_robot.launch"
+# pr_launcher "robot"         "robot.launch"
+pr_launcher "rj_robot"         "rj_robot.launch"
