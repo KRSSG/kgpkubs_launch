@@ -7,7 +7,7 @@ function launcher {
         echo "WARNING! $1 is already running!"
     else
         screen -S $1 -d -m bash
-        screen -S $1 -p 0 -X stuff "source ~/Desktop/robocup/devel/setup.bash; $2$(printf \\r)"
+        screen -S $1 -p 0 -X stuff "source "$(dirname $(dirname $(dirname $(cd "$(dirname "$0")";pwd))))""/devel/setup.bash"; $2$(printf \\r)"
     fi
 }
 
