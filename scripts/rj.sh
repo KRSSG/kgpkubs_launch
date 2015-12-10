@@ -1,13 +1,14 @@
-#!/bin/zsh
+#!/bin/bash
 # Start SSL functionality in screen sessions
 # to kill all sessions: killall -15 screen
 
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 function launcher {
     if screen -ls | grep -q $1; then
         echo "WARNING! $1 is already running!"
     else
         screen -S $1 -d -m bash
-        screen -S $1 -p 0 -X stuff "source "$(dirname $(dirname $(dirname $(cd "$(dirname "$0")";pwd))))""/devel/setup.bash"; $2$(printf \\r)"
+        screen -S $1 -p 0 -X stuff "source $DIR/../../../devel/setup.sh; $2$(printf \\r)"
     fi
 }
 
