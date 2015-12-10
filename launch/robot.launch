@@ -10,4 +10,19 @@
     <remap from="/tactic_topic" to="/tactic_1"/>
 
   </node>
+  <node pkg="ssl_robot" type="robot" name="bot2" output="screen" >
+    <param name="botID" value="2" type="int"/>
+    <remap from="/tactic_topic" to="/tactic_2"/>
+
+  </node>
+  <node pkg="ssl_robot" type="robot" name="bot3" output="screen" >
+    <param name="botID" value="3" type="int"/>
+    <remap from="/tactic_topic" to="/tactic_3"/>
+
+  </node>
+  <node pkg="ssl_robot" type="robot" name="bot4" output="screen" >
+    <param name="botID" value="4" type="int"/>
+    <remap from="/tactic_topic" to="/tactic_4"/>
+
+  </node>
 </launch>
