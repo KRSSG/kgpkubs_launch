@@ -1,6 +1,6 @@
 
 <launch>        
-  <node pkg="play" type="play_node" name="play_node" output="screen">
+  <node pkg="ssl_robot" type="test_play_node" name="test_play_node" output="screen">
     
     
     <!-- <remap from="~image" to="/head/kinect2/qhd/image_color"/> -->

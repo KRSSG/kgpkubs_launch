@@ -25,6 +25,7 @@ else
   echo "launching grSim."
   launcher "grSim" "rosrun grSim project"
 fi
+
 launcher    "core"         "roscore"
 pr_launcher "vision"    "vision.launch"
 pr_launcher "belief_state"      "belief_state.launch"

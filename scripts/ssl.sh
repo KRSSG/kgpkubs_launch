@@ -16,12 +16,19 @@ function pr_launcher {
     launcher $1 "roslaunch kgpkubs_launch $2 --wait"
 }
 
-
+ps cax | grep project > /dev/null
+if [ $? -eq 0 ]; then
+  echo "grSim already running."
+else
+  echo "launching grSim."
+  launcher "grSim" "rosrun grSim project"
+fi
 
 launcher    "core"         "roscore"
 pr_launcher "vision"    "vision.launch"
 pr_launcher "belief_state"      "belief_state.launch"
 pr_launcher "grsim_comm"    "grsim_comm.launch"
 pr_launcher "robot"         "robot.launch"
-pr_launcher "test_play_node" "play.launch"
+#pr_launcher "test_play_node" "test_play.launch"
+pr_launcher "play_node" "play.launch"
 # pr_launcher "rj_robot"         "rj_robot.launch"
